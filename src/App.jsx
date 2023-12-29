@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import GlobalStyles from "./styles/GlobalStyles";
 import Main from "./pages/Main";
+import Layout from "./pages/Layout";
 
 function App() {
   return (
@@ -9,8 +10,10 @@ function App() {
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="main" element={<Main />} />
-          <Route path="*" element={<Navigate replace to="main" />} />
+          <Route element={<Layout />}>
+            <Route path="main" element={<Main />} />
+            <Route path="*" element={<Navigate replace to="main" />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </DarkModeProvider>
