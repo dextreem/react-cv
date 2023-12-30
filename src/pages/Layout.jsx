@@ -6,6 +6,9 @@ const StyledLayout = styled.div`
   display: grid;
   position: relative;
   height: 100vh;
+  width: 600pt;
+
+  margin: 0 auto;
 `;
 
 const AppContent = styled.div`

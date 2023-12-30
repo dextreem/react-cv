@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import cvData from "../../cv_data/data";
-import EducationItem from "../components/EducationItem";
+import SectionItem from "../components/SectionItem";
 
 const PersonalDetails = styled.div`
   display: flex;
@@ -21,18 +21,16 @@ const P = styled.p`
   margin-bottom: 2.4rem;
 `;
 
-const A = styled.a`
-  cursor: pointer;
-  color: var(--color-grey-500);
-  text-decoration: underline;
-  text-decoration-style: dotted;
-`;
-
 const AboutMe = styled.section`
   margin-bottom: 2.4rem;
 `;
 
-const Education = styled.section``;
+const Section = styled.section``;
+
+const SectionTitle = styled.h3`
+  margin-bottom: 1.2rem;
+  color: var(--color-brand-700);
+`;
 
 function Main() {
   return (
@@ -44,7 +42,7 @@ function Main() {
           <ul>
             {cvData.socials.map((s) => (
               <li key={s.name}>
-                {s.name}: <A href={s.url}>{s.url.replace("https://", "")}</A>
+                {s.name}: <a href={s.url}>{s.url.replace("https://", "")}</a>
               </li>
             ))}
           </ul>
@@ -60,12 +58,40 @@ function Main() {
         <p>{cvData.aboutMe}</p>
       </AboutMe>
 
-      <Education>
-        <h3>Education</h3>
-        {cvData.education.map((edu) => (
-          <EducationItem edu={edu} />
+      <Section>
+        <SectionTitle>Work Experience</SectionTitle>
+        {cvData.experiences.map((ex) => (
+          <SectionItem key={ex.title} edu={ex} />
         ))}
-      </Education>
+      </Section>
+
+      <Section>
+        <SectionTitle>Education</SectionTitle>
+        {cvData.education.map((edu) => (
+          <SectionItem key={edu.title} edu={edu} />
+        ))}
+      </Section>
+
+      <Section>
+        <SectionTitle>Public Projects</SectionTitle>
+        {cvData.publicProjects.map((pub) => (
+          <SectionItem key={pub.title} edu={pub} />
+        ))}
+      </Section>
+
+      <Section>
+        <SectionTitle>Skills</SectionTitle>
+        {cvData.skills.map((skill) => (
+          <SectionItem key={skill.title} edu={skill} />
+        ))}
+      </Section>
+
+      <Section>
+        <SectionTitle>Interests</SectionTitle>
+        {cvData.interests.map((int) => (
+          <SectionItem key={int.id} edu={int} />
+        ))}
+      </Section>
     </main>
   );
 }

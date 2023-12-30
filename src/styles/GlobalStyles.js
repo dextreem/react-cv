@@ -187,6 +187,11 @@ button:has(svg) {
 a {
   color: inherit;
   text-decoration: none;
+
+  cursor: pointer;
+  color: var(--color-grey-500);
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 ul {
