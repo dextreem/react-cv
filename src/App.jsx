@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="main" element={<Main />} />
-            <Route path="*" element={<Navigate replace to="main" />} />
+            <Route path="/" element={<Main />} />
+            <Route path="*" element={<Navigate replace to="/" />} />
           </Route>
         </Routes>
       </BrowserRouter>
