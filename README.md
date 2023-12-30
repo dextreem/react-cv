@@ -67,3 +67,6 @@ While `name`, `picture`, `address`, `socials`, and `aboutMe` should be self-expl
     ],
 },
 ```
+
+The example in `public/cv_data_example/data.jsx` helps understanding how it works and why it is a JSX file.
+The latter allows to easily add react components wherever needed, if needed.
