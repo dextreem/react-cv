@@ -50,7 +50,6 @@ function Header() {
           )}
         </CenteredSpan>
       </ButtonIcon>
-      {/* </a> */}
 
       <div>
         <DarkModeToggle />

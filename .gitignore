@@ -2,7 +2,6 @@ cv_data/data.j*
 cv_data/profile.*
 cv_data/*.pdf
 cv_data/*.svg
-cv_data/utils.js
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,react
