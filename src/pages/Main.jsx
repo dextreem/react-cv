@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import cvData from "../../cv_data/data";
+import cvData from "../../public/cv_data/data";
 import Section from "../components/Section";
 import PersonalDetails from "../components/PersonalDetails";
 

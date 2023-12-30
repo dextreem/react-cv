@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: right;
   position: absolute;
-  right: 0;
+  right: 5rem;
   top: 0;
 
   gap: 1.2rem;
@@ -37,9 +37,9 @@ function Header() {
         <CenteredSpan>
           <span>View on</span>
           {isDarkMode ? (
-            <Img src="/public/github-mark-white.svg" alt="GitHub Logo" />
+            <Img src="/github-mark-white.svg" alt="GitHub Logo" />
           ) : (
-            <Img src="/public/github-mark.svg" alt="GitHub Logo" />
+            <Img src="/github-mark.svg" alt="GitHub Logo" />
           )}
         </CenteredSpan>
       </ButtonIcon>
