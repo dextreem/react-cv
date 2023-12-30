@@ -26,7 +26,10 @@ function PersonalDetails({ details }) {
         <ul>
           {details.socials.map((s) => (
             <li key={s.name}>
-              {s.name}: <a href={s.url}>{s.url.replace("https://", "")}</a>
+              {s.name}:{" "}
+              <a href={s.url}>
+                {s.url.replace("https://", "").replace("mailto:", "")}
+              </a>
             </li>
           ))}
         </ul>
