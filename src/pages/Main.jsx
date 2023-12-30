@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import cvData from "../../cv_data/data";
-import SectionItem from "../components/SectionItem";
+import Section from "../components/Section";
 
 const PersonalDetails = styled.div`
   display: flex;
@@ -25,11 +25,15 @@ const AboutMe = styled.section`
   margin-bottom: 2.4rem;
 `;
 
-const Section = styled.section``;
-
-const SectionTitle = styled.h3`
+const AboutMeTitle = styled.h3`
   margin-bottom: 1.2rem;
   color: var(--color-brand-700);
+`;
+
+const Sections = styled.div`
+  display: grid;
+  justify-content: space-between;
+  gap: 2rem;
 `;
 
 function Main() {
@@ -54,44 +58,15 @@ function Main() {
       </PersonalDetails>
 
       <AboutMe>
-        <SectionTitle>About Me</SectionTitle>
+        <AboutMeTitle>About Me</AboutMeTitle>
         <p>{cvData.aboutMe}</p>
       </AboutMe>
 
-      <Section>
-        <SectionTitle>Work Experience</SectionTitle>
-        {cvData.experiences.map((ex) => (
-          <SectionItem key={ex.title} edu={ex} />
+      <Sections>
+        {cvData.sections.map((s) => (
+          <Section key={s.name} data={s} />
         ))}
-      </Section>
-
-      <Section>
-        <SectionTitle>Education</SectionTitle>
-        {cvData.education.map((edu) => (
-          <SectionItem key={edu.title} edu={edu} />
-        ))}
-      </Section>
-
-      <Section>
-        <SectionTitle>Public Projects</SectionTitle>
-        {cvData.publicProjects.map((pub) => (
-          <SectionItem key={pub.title} edu={pub} />
-        ))}
-      </Section>
-
-      <Section>
-        <SectionTitle>Skills</SectionTitle>
-        {cvData.skills.map((skill) => (
-          <SectionItem key={skill.title} edu={skill} />
-        ))}
-      </Section>
-
-      <Section>
-        <SectionTitle>Interests</SectionTitle>
-        {cvData.interests.map((int) => (
-          <SectionItem key={int.id} edu={int} />
-        ))}
-      </Section>
+      </Sections>
     </main>
   );
 }

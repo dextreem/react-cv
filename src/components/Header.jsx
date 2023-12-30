@@ -1,14 +1,7 @@
 import styled from "styled-components";
 import DarkModeToggle from "./DarkModeToggle";
 import { useDarkMode } from "../contexts/DarkModeContext";
-import Button from "./Button";
 import ButtonIcon from "./ButtonIcon";
-import { useNavigate } from "react-router-dom";
-
-// const DarkModeButton = styled.div`
-//   margin: 1rem;
-//   z-index: 99;
-// `;
 
 const StyledHeader = styled.header`
   display: flex;
@@ -44,9 +37,9 @@ function Header() {
         <CenteredSpan>
           <span>View on</span>
           {isDarkMode ? (
-            <Img src="/cv_data/github-mark-white.svg" alt="GitHub Logo" />
+            <Img src="/public/github-mark-white.svg" alt="GitHub Logo" />
           ) : (
-            <Img src="/cv_data/github-mark.svg" alt="GitHub Logo" />
+            <Img src="/public/github-mark.svg" alt="GitHub Logo" />
           )}
         </CenteredSpan>
       </ButtonIcon>
