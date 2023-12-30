@@ -5,7 +5,7 @@ import Header from "../components/Header";
 const StyledLayout = styled.div`
   display: grid;
   height: 100vh;
-  width: 600pt;
+  max-width: 600pt;
 
   margin: 0 auto;
 `;
