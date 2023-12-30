@@ -54,7 +54,7 @@ function Main() {
       </PersonalDetails>
 
       <AboutMe>
-        <h3>About Me</h3>
+        <SectionTitle>About Me</SectionTitle>
         <p>{cvData.aboutMe}</p>
       </AboutMe>
 
