@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useDarkMode } from "../contexts/DarkModeContext";
 
 const PortraitPicture = styled.img`
   height: 20rem;
@@ -18,6 +19,8 @@ const StyledPersonalDetails = styled.div`
 `;
 
 function PersonalDetails({ details }) {
+  const { isDarkMode } = useDarkMode();
+
   return (
     <StyledPersonalDetails>
       <div>
@@ -35,7 +38,10 @@ function PersonalDetails({ details }) {
         </ul>
       </div>
       <PortraitPicture
-        src={details.picture}
+        src={details.picture.replace(
+          "_xlayoutx",
+          isDarkMode ? "_dark" : "_light"
+        )}
         alt={`CV profile picture of ${details.name}`}
       ></PortraitPicture>
     </StyledPersonalDetails>
