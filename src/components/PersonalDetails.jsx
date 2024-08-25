@@ -9,6 +9,10 @@ const P = styled.p`
   margin-bottom: 2.4rem;
 `;
 
+const SocialIcon = styled.span`
+  margin-right: 1ch;
+`;
+
 const StyledPersonalDetails = styled.div`
   display: flex;
   gap: 3.2rem;
@@ -27,14 +31,25 @@ function PersonalDetails({ details }) {
         <h1>{details.name}</h1>
         <P>{details.address}</P>
         <ul>
-          {details.socials.map((s) => (
-            <li key={s.name}>
-              {s.name}:{" "}
+          {details.socials.map((s) => {
+            const socialRef = (
               <a href={s.url}>
-                {s.url.replace("https://", "").replace("mailto:", "")}
+                {s.shortUrl
+                  ? s.url.split("/").at(-1)
+                  : s.url.replace("https://", "").replace("mailto:", "")}
               </a>
-            </li>
-          ))}
+            );
+            return (
+              <li key={s.name}>
+                {s.icon ? (
+                  <SocialIcon>{s.icon}</SocialIcon>
+                ) : (
+                  <span>{s.name}</span>
+                )}
+                {socialRef}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <PortraitPicture
