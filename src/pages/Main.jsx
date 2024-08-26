@@ -19,6 +19,7 @@ const Sections = styled.div`
 `;
 
 function Main() {
+  document.title = cvData.name + " - CV";
   return (
     <main>
       <PersonalDetails details={cvData} />
