@@ -12,7 +12,7 @@ const SideBySide = styled.div`
 `;
 
 const DateRange = styled.p`
-  color: var(--color-grey-400);
+  color: var(--color-grey-500);
   font-weight: 400;
   font-size: 1.6rem;
 `;
